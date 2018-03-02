@@ -24,12 +24,13 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
 	private int maxRoute;
 	private int dataSize;
 
-	public void setMaxRoute(String maxRoute) {
-		LOG.warn(String.format("MAXROUTE  %s",maxRoute));
-		this.maxRoute = Integer.parseInt(maxRoute);
+	public void setMaxRoute(int maxRoute) {
+		LOG.info(String.format("maxroute=%d", maxRoute));
+		this.maxRoute = maxRoute;
 	}
 	
 	public void setDataSize(int dataSize) {
+		LOG.info(String.format("datasize=%d", dataSize));
 		this.dataSize = dataSize;
 	}
 	
@@ -37,7 +38,7 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
-		// Setup Registry
+		// Setup Registry - the cleaner solution is to add a bean definition for the DataSet in the blueprint.xml
 		final SimpleRegistry registry = new SimpleRegistry();
 	    final CompositeRegistry compositeRegistry = new CompositeRegistry();
         compositeRegistry.addRegistry(getContext().getRegistry());
