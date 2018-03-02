@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="          http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd          http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd          http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd">
     
     
-    <!--  ATTENTION !! Copy the file src/test/resources/weldgenerator.cfg to $KARAF_HOME/etc -->
+    <!--  ATTENTION !! Copy the file src/test/resources/weldboschsim.cfg to $KARAF_HOME/etc -->
     <!-- Configuration place holder, allows properties to be externalized -->
     <cm:property-placeholder persistent-id="weldboschsim" />
  
