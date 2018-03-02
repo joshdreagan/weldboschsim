@@ -6,7 +6,7 @@
     
     <!--  ATTENTION !! Copy the file src/test/resources/weldgenerator.cfg to $KARAF_HOME/etc -->
     <!-- Configuration place holder, allows properties to be externalized -->
-    <cm:property-placeholder persistent-id="weldboschsim" /> 
+    <cm:property-placeholder persistent-id="weldboschsim" />
  
     <!-- Active MQ configuration -->
     <bean class="org.apache.camel.component.jms.JmsComponent" id="activemq">
