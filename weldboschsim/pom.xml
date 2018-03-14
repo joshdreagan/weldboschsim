@@ -33,11 +33,6 @@
 		</dependency>
 
 		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j-version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -77,18 +72,11 @@
 	   <!-- Needed for testing outside of Fuse -->
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
+			<artifactId>activemq-camel</artifactId>
 			<version>${activemq-version}</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- Test Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j-version}</version>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.apache.camel</groupId>

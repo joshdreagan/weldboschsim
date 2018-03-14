@@ -64,8 +64,8 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
         from(String.format("dataset:%s?produceDelay=-1", timerName))
     	   .marshal(dataFormat)
     	   .convertBodyTo(String.class)
-    	   .log("converted ${body}")
-    	   .to("activemq:topic:VirtualTopic.weldBoschvt?username={{username}}&password={{password}}");
+    	   //.log("converted ${body}")
+    	   .to("activemq:topic:VirtualTopic.weldBoschtest2?username={{username}}&password={{password}}");
 	}
 
 }

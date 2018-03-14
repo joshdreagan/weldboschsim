@@ -11,11 +11,19 @@
     <!-- Active MQ configuration -->
     <bean class="org.apache.camel.component.jms.JmsComponent" id="activemq">
         <property name="connectionFactory">
-            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
-                <property name="brokerURL" value="${amqqcf_url}"/>
+			<bean class="org.apache.activemq.pool.PooledConnectionFactory">
+				<argument>
+		            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+        		        <property name="brokerURL" value="${amqqcf_url}"/>
+            		</bean>
+            	</argument>
             </bean>
         </property>
     </bean>
+
+	<!-- Event Notifier -->
+	<bean id="auditEventNotifier" class="com.honda.hna.bigdata.weldboschsim.AuditEventNotifier">
+	</bean>
 
     <!-- Define the RouteBuilder as a bean and set the properties -->
     <bean
