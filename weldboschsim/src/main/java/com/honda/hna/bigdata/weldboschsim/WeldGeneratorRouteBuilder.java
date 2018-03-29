@@ -24,6 +24,8 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
 	private int maxRoute;
 	private int dataSize;
 
+	private AuditEventNotifier aen;
+
 	public void setMaxRoute(int maxRoute) {
 		LOG.info(String.format("maxroute=%d", maxRoute));
 		this.maxRoute = maxRoute;
@@ -38,6 +40,9 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
+		aen = new AuditEventNotifier();
+		getContext().getManagementStrategy().addEventNotifier(aen);
+
 		// Setup Registry - the cleaner solution is to add a bean definition for the DataSet in the blueprint.xml
 		final SimpleRegistry registry = new SimpleRegistry();
 	    final CompositeRegistry compositeRegistry = new CompositeRegistry();
@@ -65,7 +70,7 @@ public class WeldGeneratorRouteBuilder extends RouteBuilder {
     	   .marshal(dataFormat)
     	   .convertBodyTo(String.class)
     	   //.log("converted ${body}")
-    	   .to("activemq:topic:VirtualTopic.weldBoschtest2?username={{username}}&password={{password}}");
+    	   .to("activemq:topic:VirtualTopic.weldBoschtest4");
 	}
 
 }

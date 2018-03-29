@@ -26,7 +26,7 @@ public class WeldGeneratorRouteTest extends CamelBlueprintTestSupport {
     	// enough time for all messages to complete. We could also attach to the end of the route and make assertions about the messages that
     	// have arrived.
 
-       Thread.sleep(1000 * 60 * 30);
+       Thread.sleep(1000 * 60 * 60);
         
     }
 	

@@ -66,7 +66,6 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-jms</artifactId>
 			<version>${camel-version}</version>
-			<scope>test</scope>
 		</dependency>
 
 	   <!-- Needed for testing outside of Fuse -->
