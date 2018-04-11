@@ -1,0 +1,7 @@
+apiVersion: "v1"
+kind: "ConfigMap"
+metadata:
+  name: weldboschsim-configmap
+data:
+  application.properties: |-
+    spring.activemq.broker-url: tcp://activemq.weldbosch.svc:61616

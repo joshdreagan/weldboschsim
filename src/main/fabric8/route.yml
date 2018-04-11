@@ -1,0 +1,8 @@
+metadata:
+  name: weldboschsim
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: weldboschsim

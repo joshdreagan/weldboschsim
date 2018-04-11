@@ -1,0 +1,33 @@
+spec:
+  template:
+    spec:
+      serviceAccountName: weldboschsim-sa
+      containers:
+      - name: weldboschsim
+        env:
+        - name: SPRING_CONFIG_LOCATION
+          value: file:/etc/config/
+        - name: SPRING_ACTIVEMQ_USER
+          valueFrom:
+            secretKeyRef:
+              name: weldboschsim-secret
+              key: spring.activemq.user
+        - name: SPRING_ACTIVEMQ_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: weldboschsim-secret
+              key: spring.activemq.password
+        resources:
+          requests:
+            cpu: "0.2"
+          limits:
+            cpu: "4.0"
+        volumeMounts:
+        - name: weldboschsim-configmap-vol
+          mountPath: /etc/config
+          readOnly: true
+      volumes:
+      - name: weldboschsim-configmap-vol
+        configMap:
+          name: weldboschsim-configmap
+            
