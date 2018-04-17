@@ -4,4 +4,4 @@ metadata:
   name: weldboschsim-configmap
 data:
   application.properties: |-
-    spring.activemq.broker-url: tcp://activemq.weldbosch.svc:61616
+    spring.activemq.broker-url: tcp://activemq-amq-tcp.weldbosch.svc:61616
